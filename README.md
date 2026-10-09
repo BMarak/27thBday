@@ -43,7 +43,7 @@
             margin-top: 20px;
         }
 
-        .yes-button {
+        .ongaigen-button {
             background-color: #4caf50;
             color: white;
             border: none;
@@ -56,7 +56,7 @@
             transform-origin: center;
         }
 
-        .no-button {
+        .rektek-button {
             background-color: #f44336;
             color: white;
             border: none;
