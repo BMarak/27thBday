@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="header_text" id="question">Hello darling Suratee ur Bday is near will u celebrate your birthday with me?</h1>
+        <h1 class="header_text" id="question">Hello darling Suratee angming Birthday manigenma?</h1>
         <div class="gif_container">
             <img id="main-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjN4MjZzbGRyc3F2dzIydWV6dDkzcG1ndXpjd2RkOWtyeWZreTl1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute GIF">
         </div>
@@ -109,7 +109,7 @@
         }
 
         function handleYesClick() {
-            document.getElementById('question').textContent = "Knew you would say yes! Happy Birthday! ❤️";
+            document.getElementById('question').textContent = "sengsoaibohane dakode";
             document.getElementById('main-gif').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHJuYzBsb3h3bzcxMDVpZzBncWc1MmlmbmFqdHF4dTFwdXR5ZmhhYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif";
             document.getElementById('button-group').style.display = "none";
         }
