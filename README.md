@@ -13,6 +13,7 @@
             margin: 0;
             background-color: #fbeee0;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
 
         .container {
@@ -39,25 +40,27 @@
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
+            margin-top: 20px;
         }
 
         .yes-button {
             background-color: #4caf50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out;
+            transform-origin: center;
         }
 
         .no-button {
             background-color: #f44336;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 18px;
             font-weight: bold;
             border-radius: 8px;
@@ -72,8 +75,8 @@
             <img id="main-gif" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjN4MjZzbGRyc3F2dzIydWV6dDkzcG1ndXpjd2RkOWtyeWZreTl1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute GIF">
         </div>
         <div class="buttons" id="button-group">
-            <button class="yes-button" onclick="handleYesClick()">Yes</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
+            <button class="yes-button" id="yesBtn" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" id="noBtn" onclick="handleNoClick()">No</button>
         </div>
     </div>
 
@@ -90,17 +93,19 @@
         ];
 
         let messageIndex = 0;
+        let yesScale = 1;
 
         function handleNoClick() {
-            const noButton = document.querySelector('.no-button');
-            const yesButton = document.querySelector('.yes-button');
+            const noButton = document.getElementById('noBtn');
+            const yesButton = document.getElementById('yesBtn');
 
+            // Change No button text
             noButton.textContent = messages[messageIndex];
             messageIndex = (messageIndex + 1) % messages.length;
 
-            const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-            yesButton.style.fontSize = `${currentSize * 1.5}px`;
-            yesButton.style.padding = `${10 * (currentSize / 18 * 1.2)}px ${20 * (currentSize / 18 * 1.2)}px`;
+            // Increase Yes button scale cleanly by 40% each click
+            yesScale += 0.4;
+            yesButton.style.transform = `scale(${yesScale})`;
         }
 
         function handleYesClick() {
